@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Manage all accounting transactions",
+    "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    "ratting": "4.6",
+    "price": "25",
+    "description": "These involve the trading of goods and services with money. Therefore, it can be said that any transaction that is entered into by two persons or two organizations with one buying and the other one selling is considered an external transaction. It is also called a business transaction."
+  },
+  {
+    "name": "Prepare budget forecasts",
+    "image": "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80",
+    "ratting": "4.7",
+    "price": "40",
+    "description": "A budget forecast is a type of forecast that takes its inputs from the budget for the upcoming fiscal period. Once a budget is created and expectations are formed for the upcoming year, a forecast is created to model what the budgeted values should achieve."
+  },
+  {
+    "name": "Publish financial statements in time",
+    "image": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
+    "ratting": "4.8",
+    "price": "30",
+    "description": "Financial statements are written records that convey the business activities and the financial performance of a company. Financial statements are often audited by government agencies, accountants, firms, etc. to ensure accuracy and for tax, financing, or investing purposes. For-profit primary financial statements include the balance sheet, income statement, statement of cash flow, and statement of changes in equity."
+  },
+  {
+    "name": "Handle monthly, quarterly and annual closings",
+    "image": "https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80",
+    "ratting": "4.6",
+    "price": "50",
+    "description": "Perform trial balances and closing reconciliations, and gather all reconciliation data for the period you wish to analyze. Include records of account balances before and after any reconciliation adjustments, as well as any external reports that were used in the process. Assign more than one person to double-check reconciliation adjustments. This can reduce the chances of fraud or misrepresentation of account balances."
+  },
+  {
+    "name": "Reconcile accounts payable and receivable",
+    "image": "https://images.unsplash.com/photo-1559526324-593bc073d938?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+    "ratting": "4.6",
+    "price": "65",
+    "description": "Compare the ending accounts payable account balance in the general ledger for the immediately preceding period to the aged accounts payable detail report as of the end of the same period. If these numbers do not match, you will have to reconcile earlier periods before attempting to reconcile the current period. If the variance is immaterial, it may be acceptable to proceed with the reconciliation for the current period."
+  },
+  {
+    "name": "Ensure timely bank payments",
+    "image": "https://images.unsplash.com/photo-1615985249956-d13775508df8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=871&q=80",
+    "ratting": "4.9",
+    "price": "55",
+    "description": "Getting to know your client and establishing a good relationship goes a long way in terms of getting paid on time. Mutual understanding helps build respect and trust, while also making it easier for you to pick up the phone and ask about the status of your payments."
+  }
+]

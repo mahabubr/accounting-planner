@@ -1,9 +1,9 @@
 import React from 'react';
-import img1 from '../../../../Assets/Banner/pic-1.png'
-import img2 from '../../../../Assets/Banner/pic-2.png'
-import img3 from '../../../../Assets/Banner/pic-3.png'
+import img1 from '../../../../../Assets/Banner/pic-1.png'
+import img2 from '../../../../../Assets/Banner/pic-2.png'
+import img3 from '../../../../../Assets/Banner/pic-3.png'
 
-import { Swiper, SwiperSlide} from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
