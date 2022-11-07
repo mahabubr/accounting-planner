@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import HomeServicesCard from './HomeServicesCard/HomeServicesCard';
 
 const HomeServices = () => {
@@ -20,7 +21,9 @@ const HomeServices = () => {
                 }
             </div>
             <div className='text-center mb-8'>
-                <button className='bg-sky-600 px-8 hover:bg-sky-700 duration-300 py-3 text-xl text-white rounded-lg'>See All</button>
+                <Link to='/services'>
+                    <button className='bg-sky-600 px-8 hover:bg-sky-700 duration-300 py-3 text-xl text-white rounded-lg'>See All</button>
+                </Link>
             </div>
         </div>
     );
