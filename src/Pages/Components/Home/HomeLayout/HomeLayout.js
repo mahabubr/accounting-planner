@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactMe from './ContactMe/ContactMe';
 import HomeAbout from './HomeAbout/HomeAbout';
 import HomeHeader from './HomeHeader/HomeHeader';
 import HomeServices from './HomeServices/HomeServices';
@@ -11,6 +12,7 @@ const HomeLayout = () => {
             <HomeServices></HomeServices>
             <HomeAbout></HomeAbout>
             <TrustedBy></TrustedBy>
+            <ContactMe></ContactMe>
         </div>
     );
 };
