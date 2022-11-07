@@ -7,6 +7,7 @@ import "swiper/css/bundle";
 import 'swiper/less';
 import 'swiper/less/navigation';
 import 'swiper/less/pagination';
+import 'react-photo-view/dist/react-photo-view.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

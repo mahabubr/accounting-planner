@@ -1,9 +1,10 @@
 import React from 'react';
 import { BiRightArrowAlt } from 'react-icons/bi';
+import { Link } from 'react-router-dom';
 
 const HomeServicesCard = ({ service }) => {
 
-    const { name, image, price, description, ratting } = service
+    const { name, image, price, description, ratting, _id } = service
 
     return (
         <div>
@@ -17,10 +18,12 @@ const HomeServicesCard = ({ service }) => {
                     </div>
                     <p className='mt-2'>{description.slice(0, 99)}...</p>
                 </div>
-                <div className="flex items-center justify-center space-x-3 border-t-2 border-gray-300 p-5">
-                    <button className='text-xl font-bold text-blue-600'>View Details</button>
-                    <BiRightArrowAlt className='text-3xl text-blue-600 cursor-pointer' />
-                </div>
+                <Link to={`/services/${_id}`}>
+                    <div className="flex items-center justify-center space-x-3 border-t-2 border-gray-300 p-5">
+                        <button className='text-xl font-bold text-blue-600'>View Details</button>
+                        <BiRightArrowAlt className='text-3xl text-blue-600 cursor-pointer' />
+                    </div>
+                </Link>
             </div>
         </div>
     );
