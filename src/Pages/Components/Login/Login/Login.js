@@ -1,9 +1,76 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { BsGoogle, BsGithub } from 'react-icons/bs';
 import { FaFacebook } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../../Contexts/AuthContext/AuthContext';
 
 const Login = () => {
+
+    const {
+        googleSignIn,
+        githubSignIn,
+        facebookSignIn,
+        createSignIn
+    }
+        = useContext(UserContext)
+
+
+    const handleSignIn = (event) => {
+        event.preventDefault()
+
+        const form = event.target
+
+        const email = form.email.value
+        const password = form.password.value
+
+        createSignIn(email, password)
+            .then(result => {
+                const user = result.user
+                toast.success('Sign In Successfully Done')
+                form.reset()
+            })
+            .catch(e => {
+                toast.error(e.message)
+            })
+
+    }
+
+
+
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user
+                toast.success('Google Sign In Successfully Done')
+            })
+            .catch(e => {
+                toast.error(e.message)
+            })
+    }
+
+    const handleGithubSignIn = () => {
+        githubSignIn()
+            .then(result => {
+                const user = result.user
+                toast.success('Github Sign In Successfully Done')
+            })
+            .catch(e => {
+                toast.error(e.message)
+            })
+    }
+
+    const handleFacebookSignIn = () => {
+        facebookSignIn()
+            .then(result => {
+                const user = result.user
+                toast.success('Facebook Sign In Successfully Done')
+            })
+            .catch(e => {
+                toast.error(e.message)
+            })
+    }
+
     return (
         <div>
             <div className="w-9/12 my-20 mx-auto p-4 rounded-md sm:p-8 ">
@@ -13,15 +80,15 @@ const Login = () => {
                 </p>
                 <div className='block lg:flex justify-between items-center mt-8'>
                     <div className="my-6 lg:w-4/12 space-y-4">
-                        <button aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400">
+                        <button onClick={handleGoogleSignIn} aria-label="Login with Google" type="button" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400">
                             <BsGoogle />
                             <p>Login with Google</p>
                         </button>
-                        <button aria-label="Login with GitHub" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400">
+                        <button onClick={handleGithubSignIn} aria-label="Login with GitHub" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400">
                             <BsGithub />
                             <p>Login with GitHub</p>
                         </button>
-                        <button aria-label="Login with Twitter" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400">
+                        <button onClick={handleFacebookSignIn} aria-label="Login with Twitter" className="flex items-center justify-center w-full p-4 space-x-4 border rounded-md focus:ring-2 focus:ring-offset-1 border-gray-400 focus:ring-violet-400">
                             <FaFacebook />
                             <p>Login with Facebook</p>
                         </button>
@@ -31,11 +98,11 @@ const Login = () => {
                         <p className="px-3 text-gray-400">OR</p>
                         <hr className="w-full text-gray-400" />
                     </div>
-                    <form noValidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid lg:w-6/12">
+                    <form onSubmit={handleSignIn} noValidate="" action="" className="space-y-8 ng-untouched ng-pristine ng-valid lg:w-6/12">
                         <div className="space-y-4">
                             <div className="space-y-2">
                                 <label htmlFor="email" className="block text-sm">Email address</label>
-                                <input type="email" name="email" id="email" placeholder="leroy@jenkins.com" className="w-full px-3 py-4 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
+                                <input type="email" name="email" id="email" placeholder="Your Email" className="w-full px-3 py-4 border rounded-md border-gray-700 bg-gray-900 text-gray-100 focus:border-violet-400" />
                             </div>
                             <div className="space-y-2">
                                 <div className="flex justify-between">

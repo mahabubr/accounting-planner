@@ -8,11 +8,14 @@ import 'swiper/less';
 import 'swiper/less/navigation';
 import 'swiper/less/pagination';
 import 'react-photo-view/dist/react-photo-view.css';
+import AuthContext from './Contexts/AuthContext/AuthContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <AuthContext>
+      <App />
+    </AuthContext>
   </React.StrictMode>
 );
 

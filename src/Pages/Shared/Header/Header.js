@@ -1,11 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { AiOutlineAlignCenter } from 'react-icons/ai';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../Assets/logo.png'
+import { UserContext } from '../../../Contexts/AuthContext/AuthContext';
 
 const Header = () => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
+
+    const { user } = useContext(UserContext)
+    console.log(user);
 
     return (
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
