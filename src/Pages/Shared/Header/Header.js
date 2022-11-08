@@ -67,6 +67,30 @@ const Header = () => {
                                 ?
                                 <>
                                     <li className="nav-item">
+                                        <NavLink to='/my-review' end
+                                            className={({ isActive }) => isActive
+                                                ?
+                                                'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug mr-6 text-blue-600 border-b-2 border-blue-600'
+                                                :
+                                                'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug mr-6'
+                                            }
+                                        >
+                                            <p>My reviews</p>
+                                        </NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink to='/add-service' end
+                                            className={({ isActive }) => isActive
+                                                ?
+                                                'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug mr-6 text-blue-600 border-b-2 border-blue-600'
+                                                :
+                                                'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug mr-6'
+                                            }
+                                        >
+                                            <p>Add service</p>
+                                        </NavLink>
+                                    </li>
+                                    <li className="nav-item">
                                         <button onClick={handleLogOut} className='px-8 py-3 text-lg font-semibold rounded bg-pink-400 text-gray-900 hover:bg-pink-500 duration-300'>
                                             Log Out
                                         </button>

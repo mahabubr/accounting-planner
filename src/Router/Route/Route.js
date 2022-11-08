@@ -3,6 +3,7 @@ import Main from "../../Layout/Main/Main";
 import HomeLayout from "../../Pages/Components/Home/HomeLayout/HomeLayout";
 import Login from "../../Pages/Components/Login/Login/Login";
 import SignUp from "../../Pages/Components/Login/SingUp/SignUp";
+import Profile from "../../Pages/Components/Profile/Profile";
 import Services from "../../Pages/Components/Services/Services";
 import Service from "../../Pages/Components/Services/ServicesCard/Service/Service";
 import NotFound from "../../Pages/Others/NotFound/NotFound";
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: 'signup',
                 element: <SignUp />
+            },
+            {
+                path: '/profile',
+                element: <Profile />
             }
         ]
     }
