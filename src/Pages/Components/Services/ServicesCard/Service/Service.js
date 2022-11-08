@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { GoVerified } from 'react-icons/go';
+import ServicesReview from '../../ServicesReview/ServicesReview';
 
 
 const Service = () => {
@@ -25,6 +26,9 @@ const Service = () => {
                         </div>
                     </div>
                 </div>
+            </section>
+            <section className='my-20'>
+                <ServicesReview />
             </section>
         </div>
     );

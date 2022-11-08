@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { AiOutlineAlignCenter } from 'react-icons/ai';
 import { Link, NavLink } from 'react-router-dom';
 import logo from '../../../Assets/logo.png'
@@ -8,8 +9,18 @@ const Header = () => {
 
     const [navbarOpen, setNavbarOpen] = useState(false);
 
-    const { user } = useContext(UserContext)
+    const { user, logOut } = useContext(UserContext)
     console.log(user);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => {
+                toast.success('Log Out Successfully')
+            })
+            .catch(e => {
+                toast.error(e.message)
+            })
+    }
 
     return (
         <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3">
@@ -43,26 +54,36 @@ const Header = () => {
                             <NavLink to='/' end
                                 className={({ isActive }) => isActive
                                     ?
-                                    'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug text-blue-600 border-b-2 border-blue-600'
+                                    'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug mr-6 text-blue-600 border-b-2 border-blue-600'
                                     :
-                                    'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug'
+                                    'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug mr-6'
                                 }
                             >
                                 <p>Home</p>
                             </NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink to='/login' end
-                                className={({ isActive }) => isActive
-                                    ?
-                                    "px-8 py-3 text-lg font-semibold rounded bg-violet-200 text-gray-900 ml-6"
-                                    :
-                                    "px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900 ml-6"
-                                }
-                            >
-                                Login
-                            </NavLink>
-                        </li>
+                        {
+                            user
+                                ?
+                                <li className="nav-item">
+                                    <button onClick={handleLogOut} className='px-8 py-3 text-lg font-semibold rounded bg-pink-400 text-gray-900 hover:bg-pink-500 duration-300'>
+                                        Log Out
+                                    </button>
+                                </li>
+                                :
+                                <li className="nav-item">
+                                    <NavLink to='/login' end
+                                        className={({ isActive }) => isActive
+                                            ?
+                                            "px-8 py-3 text-lg font-semibold rounded bg-violet-200 text-gray-900 ml-6 mr-6"
+                                            :
+                                            "px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900 ml-6 mr-6"
+                                        }
+                                    >
+                                        Login
+                                    </NavLink>
+                                </li>
+                        }
                     </ul>
                 </div>
             </div>
