@@ -9,36 +9,44 @@ const auth = getAuth(app)
 const AuthContext = ({ children }) => {
 
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true)
 
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
     const facebookProvider = new FacebookAuthProvider()
 
     const createSignUp = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const createSignIn = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const googleSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
 
     const githubSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, githubProvider)
     }
 
     const facebookSignIn = () => {
+        setLoading(true)
         return signInWithPopup(auth, facebookProvider)
     }
 
     const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
     const updateNameAndPhoto = (name, photo) => {
+        setLoading(true)
         return updateProfile(auth.currentUser, {
             displayName: name,
             photoURL: photo
@@ -48,6 +56,7 @@ const AuthContext = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser)
+            setLoading(false)
         })
         return () => {
             unSubscribe()
@@ -56,6 +65,7 @@ const AuthContext = ({ children }) => {
 
     const userInfo = {
         user,
+        loading,
         googleSignIn,
         githubSignIn,
         facebookSignIn,
