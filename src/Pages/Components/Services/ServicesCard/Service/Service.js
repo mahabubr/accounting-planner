@@ -28,7 +28,7 @@ const Service = () => {
                 </div>
             </section>
             <section className='my-20'>
-                <ServicesReview serviceId={_id} />
+                <ServicesReview serviceId={_id} serviceName={name} />
             </section>
         </div>
     );

@@ -3,10 +3,12 @@ import Main from "../../Layout/Main/Main";
 import HomeLayout from "../../Pages/Components/Home/HomeLayout/HomeLayout";
 import Login from "../../Pages/Components/Login/Login/Login";
 import SignUp from "../../Pages/Components/Login/SingUp/SignUp";
+import MyReviews from "../../Pages/Components/MyReviews/MyReviews";
 import Profile from "../../Pages/Components/Profile/Profile";
 import Services from "../../Pages/Components/Services/Services";
 import Service from "../../Pages/Components/Services/ServicesCard/Service/Service";
 import NotFound from "../../Pages/Others/NotFound/NotFound";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -37,7 +39,17 @@ const router = createBrowserRouter([
             },
             {
                 path: '/profile',
-                element: <Profile />
+                element:
+                    <PrivateRoute>
+                        <Profile />
+                    </PrivateRoute>
+            },
+            {
+                path: '/my-review',
+                element:
+                    <PrivateRoute>
+                        <MyReviews />
+                    </PrivateRoute>
             }
         ]
     }

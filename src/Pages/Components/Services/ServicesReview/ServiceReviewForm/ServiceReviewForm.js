@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
 import { UserContext } from '../../../../../Contexts/AuthContext/AuthContext';
 
-const ServiceReviewForm = ({ serviceId }) => {
+const ServiceReviewForm = ({ serviceId, serviceName }) => {
 
     const { user } = useContext(UserContext)
 
@@ -27,7 +27,8 @@ const ServiceReviewForm = ({ serviceId }) => {
             message: review_message,
             ratting: ratting,
             time: currentDateInfo,
-            service_id: serviceId
+            service_id: serviceId,
+            service_name: serviceName
         }
 
         fetch(`http://localhost:5000/reviewService/`, {
