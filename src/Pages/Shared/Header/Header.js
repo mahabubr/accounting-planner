@@ -65,11 +65,19 @@ const Header = () => {
                         {
                             user
                                 ?
-                                <li className="nav-item">
-                                    <button onClick={handleLogOut} className='px-8 py-3 text-lg font-semibold rounded bg-pink-400 text-gray-900 hover:bg-pink-500 duration-300'>
-                                        Log Out
-                                    </button>
-                                </li>
+                                <>
+                                    <li className="nav-item">
+                                        <button onClick={handleLogOut} className='px-8 py-3 text-lg font-semibold rounded bg-pink-400 text-gray-900 hover:bg-pink-500 duration-300'>
+                                            Log Out
+                                        </button>
+                                    </li>
+                                    <Link to='/profile'>
+                                        <div className="relative flex-shrink-0 ml-6">
+                                            <span className="absolute bottom-0 right-0 w-4 h-4 bg-green-600 border-2 rounded-full text-gray-100 border-white"></span>
+                                            <img src={user?.photoURL} alt="" className="w-12 h-12 border-2 rounded-full p-1 border-gray-800" />
+                                        </div>
+                                    </Link>
+                                </>
                                 :
                                 <li className="nav-item">
                                     <NavLink to='/login' end

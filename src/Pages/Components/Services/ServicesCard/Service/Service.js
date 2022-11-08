@@ -6,7 +6,7 @@ import ServicesReview from '../../ServicesReview/ServicesReview';
 
 const Service = () => {
 
-    const { image, name, description, price, ratting } = useLoaderData()
+    const { image, name, description, price, ratting, _id } = useLoaderData()
 
 
     return (
@@ -28,7 +28,7 @@ const Service = () => {
                 </div>
             </section>
             <section className='my-20'>
-                <ServicesReview />
+                <ServicesReview serviceId={_id} />
             </section>
         </div>
     );
