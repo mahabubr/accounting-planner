@@ -47,6 +47,18 @@ const Header = () => {
                                 <p>Home</p>
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink to='/login' end
+                                className={({ isActive }) => isActive
+                                    ?
+                                    "px-8 py-3 text-lg font-semibold rounded bg-violet-200 text-gray-900 ml-6"
+                                    :
+                                    "px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900 ml-6"
+                                }
+                            >
+                                Login
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>

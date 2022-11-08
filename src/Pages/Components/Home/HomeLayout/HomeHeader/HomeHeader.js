@@ -73,8 +73,8 @@ const HomeHeader = () => {
                                     A good accountant is not just someone with finance skills but also an expert in human relations and communication. have exceptional integrity as they oversee financial records, and they must have strong communication skills to present detailed information in a manner that’s easy to understand.
                                 </p>
                                 <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-                                    <Link to="/login" rel="noopener noreferrer" href="/" className="px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900">Login</Link>
-                                    <Link to='/' rel="noopener noreferrer" href="/" className="px-8 py-3 text-lg font-semibold border rounded border-gray-100">Learn More</Link>
+                                    <Link to="/login" rel="noopener noreferrer" className="px-8 py-3 text-lg font-semibold rounded bg-violet-400 text-gray-900">Login</Link>
+                                    <Link to='/' rel="noopener noreferrer"className="px-8 py-3 text-lg font-semibold border rounded border-gray-100">Learn More</Link>
                                 </div>
                             </div>
                             <div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
