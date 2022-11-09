@@ -61,6 +61,18 @@ const Header = () => {
                                 <p>Home</p>
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink to='/services' end
+                                className={({ isActive }) => isActive
+                                    ?
+                                    'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug mr-6 text-blue-600 border-b-2 border-blue-600'
+                                    :
+                                    'px-3 py-2 flex items-center text-lg uppercase font-bold leading-snug mr-6'
+                                }
+                            >
+                                <p>Services</p>
+                            </NavLink>
+                        </li>
                         {
                             user
                                 ?

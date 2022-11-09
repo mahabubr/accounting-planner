@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main/Main";
+import AddService from "../../Pages/AddService/AddService";
 import HomeLayout from "../../Pages/Components/Home/HomeLayout/HomeLayout";
 import Login from "../../Pages/Components/Login/Login/Login";
 import SignUp from "../../Pages/Components/Login/SingUp/SignUp";
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
                 path: '/my-review/:id',
                 element: < MyReviewUpdate />,
                 loader: async ({ params }) => fetch(`http://localhost:5000/reviewService/update/${params.id}`)
+            },
+            {
+                path: '/add-service',
+                element: <AddService />
             }
         ]
     }
