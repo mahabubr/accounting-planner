@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const MyReviewList = ({ review, handleDeleteList }) => {
 
-    const { service_name, message, service_id } = review
+    const { service_name, message, service_id, _id } = review
 
     return (
         <tr className="border-b text-gray-900 font-bold text-lg">
@@ -21,7 +21,9 @@ const MyReviewList = ({ review, handleDeleteList }) => {
                 </Link>
             </td>
             <td className="py-4 px-6 flex justify-center text-2xl items-center">
-                <FaRecycle className='text-blue-800 mr-2 cursor-pointer' />
+                <Link to={`/my-review/${_id}`}>
+                    <FaRecycle className='text-blue-800 mr-2 cursor-pointer' />
+                </Link>
                 <AiFillDelete onClick={() => handleDeleteList(review)} className='text-red-500 ml-2 cursor-pointer' />
             </td>
         </tr>

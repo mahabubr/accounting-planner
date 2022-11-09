@@ -39,6 +39,9 @@ const MyReviews = () => {
 
     return (
         <div className='w-8/12 mx-auto my-32'>
+            <div className='mb-6 text-3xl font-bold text-center text-purple-700'>
+                <h2>You Have {myReviews.length} Reviews</h2>
+            </div>
             <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left text-gray-200">
                     <thead className=" text-gray-100  uppercase bg-gray-700">

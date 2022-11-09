@@ -10,7 +10,6 @@ const Header = () => {
     const [navbarOpen, setNavbarOpen] = useState(false);
 
     const { user, logOut } = useContext(UserContext)
-    console.log(user);
 
     const handleLogOut = () => {
         logOut()
