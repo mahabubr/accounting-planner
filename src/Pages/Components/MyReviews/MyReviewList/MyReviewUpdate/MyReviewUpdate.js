@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 
@@ -15,7 +16,7 @@ const MyReviewUpdate = () => {
             review
         }
 
-        fetch(`http://localhost:5000/reviewService/update/${_id}`, {
+        fetch(`https://accounting-planners-server.vercel.app/reviewService/update/${_id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -38,6 +39,9 @@ const MyReviewUpdate = () => {
 
     return (
         <div className='my-20 w-8/12 mx-auto'>
+            <Helmet>
+                <title>Accounting Planners - My Review Update</title>
+            </Helmet>
             <div className='md:flex justify-between items-center my-2'>
                 <label htmlFor="message" className="text-2xl font-semibold">Update Review</label>
                 <div>

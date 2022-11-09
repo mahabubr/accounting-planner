@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import toast from 'react-hot-toast';
 import { BsGoogle, BsGithub } from 'react-icons/bs';
 import { FaFacebook } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { UserContext } from '../../../../Contexts/AuthContext/AuthContext';
 
 const Login = () => {
+
+    const location = useLocation()
+    const from = location.state?.from?.pathname || '/'
+    const navigate = useNavigate()
 
     const {
         googleSignIn,
@@ -28,7 +33,26 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 toast.success('Sign In Successfully Done')
-                form.reset()
+
+                const userEmail = {
+                    email: user.email
+                }
+
+                fetch('https://accounting-planners-server.vercel.app/jwt', {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json"
+                    },
+                    body: JSON.stringify(userEmail)
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem("token", data.token)
+                        form.reset()
+                        navigate(from, { replace: true })
+                    })
+                    .catch(e => console.log(e))
+
             })
             .catch(e => {
                 toast.error(e.message)
@@ -43,6 +67,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 toast.success('Google Sign In Successfully Done')
+                navigate(from, { replace: true })
             })
             .catch(e => {
                 toast.error(e.message)
@@ -54,6 +79,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 toast.success('Github Sign In Successfully Done')
+                navigate(from, { replace: true })
             })
             .catch(e => {
                 toast.error(e.message)
@@ -65,6 +91,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user
                 toast.success('Facebook Sign In Successfully Done')
+                navigate(from, { replace: true })
             })
             .catch(e => {
                 toast.error(e.message)
@@ -73,6 +100,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Accounting Planners - Login</title>
+            </Helmet>
             <div className="w-9/12 my-20 mx-auto p-4 rounded-md sm:p-8 ">
                 <h2 className="mb-3 text-5xl font-semibold text-center">Login to your account</h2>
                 <p className="text-lg text-center">Don't have account?

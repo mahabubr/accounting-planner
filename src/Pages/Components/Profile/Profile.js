@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Helmet } from 'react-helmet';
 import { UserContext } from '../../../Contexts/AuthContext/AuthContext';
 
 const Profile = () => {
@@ -7,6 +8,9 @@ const Profile = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Accounting Planners - Profile</title>
+            </Helmet>
             <div className="max-w-md mx-auto my-32 p-8 sm:flex sm:space-x-6">
                 <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
                     <img src={user?.photoURL} alt="" className="object-cover object-center w-full h-full rounded bg-gray-500" />

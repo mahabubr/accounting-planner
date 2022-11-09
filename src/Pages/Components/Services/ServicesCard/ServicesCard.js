@@ -9,7 +9,7 @@ const ServicesCard = ({ service }) => {
 
     return (
         <div>
-            <div className="flex flex-col justify-center w-full my-12 rounded-md bg-gray-200 text-gray-900">
+            <div data-aos="zoom-out-up" className="flex flex-col justify-center w-full my-12 rounded-md bg-gray-200 text-gray-900">
                 <PhotoProvider>
                     <PhotoView src={image}>
                         <img alt="" className="self-center flex-shrink-0 w-52 object-cover rounded-2xl h-40 -mt-12 bg-center drop-shadow-2xl bg-cover bg-gray-500" src={image} />

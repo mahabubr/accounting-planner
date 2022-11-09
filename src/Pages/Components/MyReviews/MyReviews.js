@@ -2,25 +2,36 @@ import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../Contexts/AuthContext/AuthContext';
 import MyReviewList from './MyReviewList/MyReviewList';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet';
 
 const MyReviews = () => {
 
-    const { user } = useContext(UserContext)
+    const { user, logOut } = useContext(UserContext)
 
     const [myReviews, setMyReviews] = useState([])
+    const [loading, setLoading] = useState(true)
+
 
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewService?email=${user?.email}`)
-            .then(res => res.json())
+        fetch(`https://accounting-planners-server.vercel.app/reviewService?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem("token")}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    return logOut();
+                }
+                setLoading(false)
+                return res.json();
+            })
             .then(data => setMyReviews(data))
-    }, [user?.email])
+    }, [user?.email, logOut])
 
     const handleDeleteList = (userReview) => {
-
         const confirm = window.confirm('Are You Sure To Delete Your Review')
-
         if (confirm) {
-            fetch(`http://localhost:5000/reviewService/${userReview._id}`, {
+            fetch(`https://accounting-planners-server.vercel.app/reviewService/${userReview._id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -37,8 +48,17 @@ const MyReviews = () => {
         }
     }
 
+    if (loading) {
+        return <div className='h-screen flex justify-center items-center'>
+            <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+        </div>
+    }
+
     return (
         <div className='w-8/12 mx-auto my-32'>
+            <Helmet>
+                <title>Accounting Planners - My Review</title>
+            </Helmet>
             {
                 myReviews.length > 0
                     ?

@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { GoVerified } from 'react-icons/go';
 import ServicesReview from '../../ServicesReview/ServicesReview';
+import { Helmet } from 'react-helmet';
 
 
 const Service = () => {
@@ -11,10 +12,13 @@ const Service = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Accounting Planners - Services Info</title>
+            </Helmet>
             <section className="my-20">
                 <div className="container flex items-center flex-col mx-auto lg:flex-row">
                     <div className="w-10/12 mx-auto lg:w-2/4">
-                        <img src={image} className="rounded-3xl border-2 p-2 shadow-2xl border-pink-400" alt="" />
+                        <img src={image} className="rounded-3xl hover:scale-105 duration-500 border-2 p-2 shadow-2xl border-pink-400" alt="" />
                     </div>
                     <div className="flex flex-col w-10/12 mx-auto p-6 lg:w-2/4 md:p-8 lg:p-12">
                         <GoVerified className='text-3xl text-blue-600 mb-4' />

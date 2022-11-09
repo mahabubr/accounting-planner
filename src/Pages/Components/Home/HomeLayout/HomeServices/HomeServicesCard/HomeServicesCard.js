@@ -1,5 +1,6 @@
 import React from 'react';
 import { BiRightArrowAlt } from 'react-icons/bi';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 import { Link } from 'react-router-dom';
 
 const HomeServicesCard = ({ service }) => {
@@ -8,8 +9,12 @@ const HomeServicesCard = ({ service }) => {
 
     return (
         <div>
-            <div className="flex flex-col justify-center w-full my-12 rounded-md bg-gray-200 text-gray-900">
-                <img alt="" className="self-center flex-shrink-0 w-52 object-cover rounded-2xl h-40 -mt-12 bg-center drop-shadow-2xl bg-cover bg-gray-500" src={image} />
+            <div data-aos="zoom-in" className="flex flex-col justify-center w-full my-12 rounded-md bg-gray-200 text-gray-900">
+                <PhotoProvider>
+                    <PhotoView src={image}>
+                        <img alt="" className="self-center flex-shrink-0 w-52 object-cover rounded-2xl h-40 -mt-12 bg-center drop-shadow-2xl bg-cover bg-gray-500" src={image} />
+                    </PhotoView>
+                </PhotoProvider>
                 <div className="flex-1 p-8">
                     <p className="text-2xl h-20 font-semibold leading-snug">{name}</p>
                     <div className='flex justify-between items-center'>

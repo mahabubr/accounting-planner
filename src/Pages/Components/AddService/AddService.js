@@ -1,5 +1,6 @@
 import React from 'react';
 import toast from 'react-hot-toast';
+import { Helmet } from "react-helmet";
 
 const AddService = () => {
 
@@ -22,7 +23,7 @@ const AddService = () => {
             description: service_description
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://accounting-planners-server.vercel.app/services', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
@@ -43,6 +44,9 @@ const AddService = () => {
 
     return (
         <div className='w-9/12 mx-auto my-20 bg-gray-50 p-20 rounded-3xl shadow-xl'>
+            <Helmet>
+                <title>Accounting Planners - My Title</title>
+            </Helmet>
             <form onSubmit={handleAddService}>
                 <div className='mb-8 grid grid-cols-1 md:grid-cols-2 gap-10'>
                     <div className="space-y-2 shadow-2xl">

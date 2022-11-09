@@ -9,6 +9,10 @@ import 'swiper/less/navigation';
 import 'swiper/less/pagination';
 import 'react-photo-view/dist/react-photo-view.css';
 import AuthContext from './Contexts/AuthContext/AuthContext';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -9,7 +9,7 @@ const HomeAbout = () => {
     return (
         <div className='my-12'>
             <div className="container w-8/12 mx-auto grid grid-cols-1 gap-6 md:grid-cols-2">
-                <div className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
+                <div data-aos="fade-right" className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
                     <div className="flex text-3xl items-center justify-center px-10 bg-violet-400 text-violet-800">
                         <TbCheckbox />
                     </div>
@@ -18,7 +18,7 @@ const HomeAbout = () => {
                         <p>Projects</p>
                     </div>
                 </div>
-                <div className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
+                <div data-aos="fade-left" className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
                     <div className="flex text-3xl items-center justify-center px-10 bg-violet-400 text-violet-800">
                         <FiUsers />
                     </div>
@@ -27,7 +27,7 @@ const HomeAbout = () => {
                         <p>Customers</p>
                     </div>
                 </div>
-                <div className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
+                <div data-aos="fade-right" className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
                     <div className="flex text-3xl items-center justify-center px-10 bg-violet-400 text-violet-800">
                         <FaAward />
                     </div>
@@ -36,7 +36,7 @@ const HomeAbout = () => {
                         <p>Awards</p>
                     </div>
                 </div>
-                <div className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
+                <div data-aos="fade-left" className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
                     <div className="flex text-3xl items-center justify-center px-10  bg-violet-400 text-violet-800">
                         <BiSupport />
                     </div>
@@ -45,7 +45,7 @@ const HomeAbout = () => {
                         <p>Support</p>
                     </div>
                 </div>
-                <div className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
+                <div data-aos="fade-right" className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
                     <div className="flex text-3xl items-center justify-center px-10  bg-violet-400 text-violet-800">
                         <AiOutlineFieldTime />
                     </div>
@@ -54,7 +54,7 @@ const HomeAbout = () => {
                         <p>Uptime</p>
                     </div>
                 </div>
-                <div className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
+                <div data-aos="fade-left" className="flex overflow-hidden rounded-lg bg-violet-900 text-violet-100 h-28">
                     <div className="flex text-3xl items-center justify-center px-10  bg-violet-400 text-violet-800">
                         <BiCoffee />
                     </div>

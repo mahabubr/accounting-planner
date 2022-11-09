@@ -10,11 +10,16 @@ const ServicesReview = ({ serviceId, serviceName }) => {
 
     const [reviewItem, setReviewItem] = useState([])
 
+    const [reload, setReload] = useState(true)
+
     useEffect(() => {
-        fetch(`http://localhost:5000/reviewService/${serviceId}`)
-            .then(res => res.json())
+        fetch(`https://accounting-planners-server.vercel.app/reviewService/${serviceId}`)
+            .then(res => {
+                setReload(!reload)
+                return res.json()
+            })
             .then(data => setReviewItem(data))
-    }, [serviceId])
+    }, [serviceId, reload])
 
     return (
         <div className='w-8/12 mx-auto'>
@@ -33,7 +38,7 @@ const ServicesReview = ({ serviceId, serviceName }) => {
             </div>
             <div className='my-20 lg:w-7/12 mx-auto'>
                 {
-                    reviewItem.map(item => <ServicesReviewItem key={item._id} item={item}  />)
+                    reviewItem.map(item => <ServicesReviewItem key={item._id} item={item} />)
                 }
             </div>
         </div>

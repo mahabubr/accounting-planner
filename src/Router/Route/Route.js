@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main/Main";
-import AddService from "../../Pages/AddService/AddService";
+import AddService from "../../Pages/Components/AddService/AddService";
+import Blog from "../../Pages/Components/Blog/Blog";
 import HomeLayout from "../../Pages/Components/Home/HomeLayout/HomeLayout";
 import Login from "../../Pages/Components/Login/Login/Login";
 import SignUp from "../../Pages/Components/Login/SingUp/SignUp";
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path: '/services/:id',
                 element: <Service />,
-                loader: async ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                loader: async ({ params }) => fetch(`https://accounting-planners-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/login',
@@ -56,11 +57,18 @@ const router = createBrowserRouter([
             {
                 path: '/my-review/:id',
                 element: < MyReviewUpdate />,
-                loader: async ({ params }) => fetch(`http://localhost:5000/reviewService/update/${params.id}`)
+                loader: async ({ params }) => fetch(`https://accounting-planners-server.vercel.app/reviewService/update/${params.id}`)
             },
             {
                 path: '/add-service',
-                element: <AddService />
+                element:
+                    <PrivateRoute>
+                        <AddService />
+                    </PrivateRoute>
+            },
+            {
+                path: '/blog',
+                element: <Blog />
             }
         ]
     }

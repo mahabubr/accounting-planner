@@ -31,7 +31,7 @@ const ServiceReviewForm = ({ serviceId, serviceName }) => {
             service_name: serviceName
         }
 
-        fetch(`http://localhost:5000/reviewService/`, {
+        fetch(`https://accounting-planners-server.vercel.app/reviewService/`, {
             method: "POST",
             headers: {
                 "content-type": "application/json"
