@@ -45,7 +45,7 @@ const AddService = () => {
     return (
         <div className='w-9/12 mx-auto my-20 bg-gray-50 p-20 rounded-3xl shadow-xl'>
             <Helmet>
-                <title>Accounting Planners - My Title</title>
+                <title>Accounting Planners - Add Service</title>
             </Helmet>
             <form onSubmit={handleAddService}>
                 <div className='mb-8 grid grid-cols-1 md:grid-cols-2 gap-10'>
