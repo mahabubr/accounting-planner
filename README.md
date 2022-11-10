@@ -1,4 +1,8 @@
-# Session Solution
+# Account Planners
+
+## Project's Features
+
+<br>
 
 ### Website [Live Link](https://accounting-planners.web.app/)
 
@@ -13,7 +17,7 @@
 
 ---
 
-## website functionality
+## Functionality
 
 - React
 - React Router
